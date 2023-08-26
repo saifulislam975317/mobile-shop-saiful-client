@@ -12,10 +12,17 @@ const Order = () => {
   const vivo = products.filter((product) => product.category === "vivo");
   const oppo = products.filter((product) => product.category === "oppo");
   const samsung = products.filter((product) => product.category === "samsung");
-  console.log(products);
   return (
     <div>
-      <h1 className="text-center text-bold text-3xl">Order Online</h1>
+      <div className="text-center">
+        <h1 className=" font-bold text-2xl text-orange-400">
+          Order Online Mobile
+        </h1>
+        <p>
+          Explore and buy the latest mobile phones online. <br /> Discover a
+          wide range of brands, models, and features.
+        </p>
+      </div>
       <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <TabList>
           <Tab>iPhone</Tab>

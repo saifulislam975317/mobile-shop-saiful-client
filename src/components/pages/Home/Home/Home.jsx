@@ -1,3 +1,4 @@
+import Offered from "../../Offered/Offered";
 import Order from "../../Order/Order";
 import Banner from "../Banner/Banner";
 const Home = () => {
@@ -5,6 +6,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <Order></Order>
+      <Offered></Offered>
     </div>
   );
 };
