@@ -1,6 +1,6 @@
 const MobileCard = ({ item }) => {
   const { name, price, image, description } = item;
-  console.log(item, "mobile order");
+
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
@@ -14,7 +14,7 @@ const MobileCard = ({ item }) => {
         <p>{description}</p>
 
         <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+          <button className="btn btn-info">Order Now</button>
         </div>
       </div>
     </div>

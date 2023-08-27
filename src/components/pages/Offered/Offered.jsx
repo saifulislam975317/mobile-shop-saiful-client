@@ -2,9 +2,9 @@ import discountBanner from "../../../assets/discount/discount.avif";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 const Offered = () => {
   return (
-    <dvi className="mt-4">
+    <div className="mt-8">
       <SectionTitle
-        heading={"We Offer on Realme"}
+        heading={"We Offered on Realme Mobile"}
         subHeading={"-----Don't miss------"}
       ></SectionTitle>
 
@@ -30,12 +30,11 @@ const Offered = () => {
                 to own the phone you have been eyeing. Shop now and enjoy
                 unparalleled savings while stocks last
               </p>
-              <button className="btn btn-primary">Get Started</button>
             </div>
           </div>
         </div>
       </div>
-    </dvi>
+    </div>
   );
 };
 

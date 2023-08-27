@@ -1,57 +1,52 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { useEffect, useState } from "react";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+import SectionTitle from "../Shared/SectionTitle/SectionTitle";
+
 const Reviews = () => {
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    fetch("ratings.json")
+      .then((res) => res.json())
+      .then((data) => setItems(data));
+  }, []);
+
   return (
     <div>
-      <h1 className="text-orange-500 text-center">Customer Reviews</h1>
-      <div className="flex gap-4 text-center">
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <figure className="px-10 pt-10">
-            <div className="avatar">
-              <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
+      <SectionTitle
+        subHeading={"----see client feedback----"}
+        heading={"Customers Reviews"}
+      ></SectionTitle>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {items.map((item) => (
+          <SwiperSlide key={item.id}>
+            <div className="flex flex-col py-12 my-10 items-center">
+              <Rating style={{ maxWidth: 180 }} value={item.ratings} readOnly />
+              <p>{item.details}</p>
+              <h1 className="font-bold text-xl">{item.name}</h1>
             </div>
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <figure className="px-10 pt-10">
-            <div className="avatar">
-              <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
-            </div>
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <figure className="px-10 pt-10">
-            <div className="avatar">
-              <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
-            </div>
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

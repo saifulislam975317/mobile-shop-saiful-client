@@ -1,5 +1,5 @@
 import featuredImg from "../../../../assets/features/features-1.avif";
-import bgFeature from "../../../../assets/features/features-3.avif";
+import bgFeature from "../../../../assets/features/features-2.avif";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 const Featured = () => {
   return (
@@ -7,7 +7,10 @@ const Featured = () => {
       className="bg-no-repeat bg-cover  bg-opacity-10 bg-fixed"
       style={{ backgroundImage: `url(${bgFeature})` }}
     >
-      <SectionTitle heading={"Mobile Features"}></SectionTitle>
+      <SectionTitle
+        heading={"Mobile Features"}
+        subHeading={"---See your Mobile features---"}
+      ></SectionTitle>
       <div className="flex justify-center  items-center py-16 bg-slate-500 bg-opacity-60 px-8">
         <div>
           <img src={featuredImg} alt="" />

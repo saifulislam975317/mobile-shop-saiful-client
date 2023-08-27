@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "SarahJohnson",
+    "details": "Absolutely loving my new phone! The camera quality is top-notch, and the battery life is impressive.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "AlexSmith",
+    "details": "Sleek design, smooth performance, and the AMOLED display is stunning. Highly recommend!",
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "EmilyBrown",
+    "details": "The fast charging feature is a game changer. No more waiting around for hours to get a full charge.",
+    "rating": 3
+  },
+  {
+    "id": 4,
+    "name": "DavidMiller",
+    "details": "This phone's 5G connectivity is unbelievably fast. Streaming and browsing are a breeze.",
+    "rating": 4
+  },
+  {
+    "id": 5,
+    "name": "JessicaWilson",
+    "details": "The camera features are impressive, especially the low-light performance. Captures great moments effortlessly.",
+    "rating": 5
+  },
+  {
+    "id": 6,
+    "name": "MichaelThomas",
+    "details": "The storage capacity is ample for all my apps and media. No need to worry about running out of space.",
+    "rating": 4
+  },
+  {
+    "id": 7,
+    "name": "OliviaJones",
+    "details": "The fingerprint sensor is super quick and accurate. No more struggling to unlock my phone.",
+    "rating": 5
+  },
+  {
+    "id": 8,
+    "name": "EthanClark",
+    "details": "The build quality is solid, and the phone feels great in the hand. Very satisfied with my purchase.",
+    "rating": 3
+  },
+  {
+    "id": 9,
+    "name": "SophiaWhite",
+    "details": "The battery life on this phone is amazing. It easily lasts me throughout the day with heavy usage.",
+    "rating": 5
+  },
+  {
+    "id": 10,
+    "name": "DanielLee",
+    "details": "The software interface is clean and intuitive. I'm a fan of the user experience on this device.",
+    "rating": 4
+  }
+]
