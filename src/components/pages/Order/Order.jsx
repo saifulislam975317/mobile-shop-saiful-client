@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useProducts from "../../../hooks/useProducts";
 import OrderTab from "./OrderTab/OrderTab";
+import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 
 const Order = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -14,15 +15,10 @@ const Order = () => {
   const samsung = products.filter((product) => product.category === "samsung");
   return (
     <div>
-      <div className="text-center">
-        <h1 className=" font-bold text-2xl text-orange-400">
-          Order Online Mobile
-        </h1>
-        <p>
-          Explore and buy the latest mobile phones online. <br /> Discover a
-          wide range of brands, models, and features.
-        </p>
-      </div>
+      <SectionTitle
+        heading={"Order  Mobile by Category"}
+        subHeading={"-------Hurry up!--------"}
+      ></SectionTitle>
       <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <TabList>
           <Tab>iPhone</Tab>

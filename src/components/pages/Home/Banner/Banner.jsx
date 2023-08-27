@@ -9,7 +9,7 @@ import banner6 from "../../../../assets/banner/banner-6.avif";
 
 const Banner = () => {
   return (
-    <div>
+    <div className="banner-area">
       <Carousel>
         <div>
           <img src={banner5} />
