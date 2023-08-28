@@ -4,6 +4,8 @@ import signUpImg from "../../../assets/loginAndSignup/signUp.jpg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../ContextProvider/AuthProvider";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 const SignUp = () => {
   const [errorEmail, setErrorEmail] = useState("");
   const { signUp, userUpdateProfile } = useContext(AuthContext);
@@ -19,10 +21,24 @@ const SignUp = () => {
     signUp(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        userUpdateProfile(data.name);
-        reset();
-        navigate("/");
-        console.log(user);
+        userUpdateProfile(data.name)
+          .then(() => {
+            console.log("user profile updated");
+            reset();
+            Swal.fire({
+              position: "top-center",
+              icon: "success",
+              title: "user is successfully created",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate("/");
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+
+        console.log("user", user);
       })
       .catch((error) => {
         setErrorEmail(error.message);
@@ -31,6 +47,9 @@ const SignUp = () => {
   };
   return (
     <div className="hero my-4">
+      <Helmet>
+        <title>Mobile | signUp</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left mr-2 p-10">
           <img src={signUpImg} alt="" />
@@ -103,7 +122,7 @@ const SignUp = () => {
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="btn btn-secondary text-white"
+                  className="btn btn-info text-white"
                   type="submit"
                   value="Sign up"
                 />
@@ -111,7 +130,7 @@ const SignUp = () => {
             </form>
             <p>
               Already have an account?
-              <Link className="btn-link" to="/login">
+              <Link className="btn-link ml-2" to="/login">
                 Please login
               </Link>
             </p>

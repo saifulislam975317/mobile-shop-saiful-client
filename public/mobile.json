@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "name": "iPhone 14pro",
     "price": 999,
     "category": "iPhone",
@@ -8,7 +7,6 @@
     "image": "https://i.ibb.co/jbm6fWD/iphone-14-pro.jpg"
   },
   {
-    "id": 2,
     "name": "iPhone 13pro",
     "price": 899,
     "category": "iPhone",
@@ -16,31 +14,6 @@
     "image": "https://i.ibb.co/WfS6vqv/iphone-13pro.jpg"
   },
   {
-    "id": 3,
-    "name": "iPhone 12",
-    "price": 799,
-    "category": "iPhone",
-    "description": "The latest iPhone with advanced features.",
-    "image": "https://i.ibb.co/qy6kCsd/iphone-12.jpg"
-  },
-  {
-    "id": 4,
-    "name": "iPhone 11",
-    "price": 699,
-    "category": "iPhone",
-    "description": "The latest iPhone with advanced features.",
-    "image": "https://i.ibb.co/Kj9HWsy/iphone-11.jpg"
-  },
-  {
-    "id": 5,
-    "name": "iPhone 10",
-    "price": 599,
-    "category": "iPhone",
-    "description": "The latest iPhone with advanced features.",
-    "image": "https://i.ibb.co/5KGmBHG/iphone-10.jpg"
-  },
-  {
-    "id": 6,
     "name": "iPhone 9",
     "price": 599,
     "category": "iPhone",
@@ -48,7 +21,28 @@
     "image": "https://i.ibb.co/gWn50SP/iphone-9.jpg"
   },
   {
-    "id": 7,
+    "name": "iPhone 11",
+    "price": 699,
+    "category": "iPhone",
+    "description": "The latest iPhone with advanced features.",
+    "image": "https://i.ibb.co/Kj9HWsy/iphone-11.jpg"
+  },
+  {
+    "name": "iPhone 10",
+    "price": 599,
+    "category": "iPhone",
+    "description": "The latest iPhone with advanced features.",
+    "image": "https://i.ibb.co/5KGmBHG/iphone-10.jpg"
+  },
+
+  {
+    "name": "iPhone 12",
+    "price": 799,
+    "category": "iPhone",
+    "description": "The latest iPhone with advanced features.",
+    "image": "https://i.ibb.co/qy6kCsd/iphone-12.jpg"
+  },
+  {
     "name": "Samsung Galaxy A04",
     "price": 899,
     "category": "samsung",
@@ -56,7 +50,6 @@
     "image": "https://i.ibb.co/3Y6Qnnh/samsung-a04.jpg"
   },
   {
-    "id": 8,
     "name": "Samsung Galaxy A24",
     "price": 799,
     "category": "samsung",
@@ -64,7 +57,6 @@
     "image": "https://i.ibb.co/SN2bYQ4/samsung-a24.jpg"
   },
   {
-    "id": 9,
     "name": "Samsung Galaxy A54",
     "price": 699,
     "category": "samsung",
@@ -72,7 +64,6 @@
     "image": "https://i.ibb.co/0JvQsZY/samsung-a54.jpg"
   },
   {
-    "id": 10,
     "name": "Samsung Galaxy A72",
     "price": 599,
     "category": "samsung",
@@ -80,7 +71,6 @@
     "image": "https://i.ibb.co/tsDMhZ3/samsung-a72.jpg"
   },
   {
-    "id": 11,
     "name": "Samsung Galaxy S22",
     "price": 599,
     "category": "samsung",
@@ -88,7 +78,6 @@
     "image": "https://i.ibb.co/ctyzTP2/samsung-s22.jpg"
   },
   {
-    "id": 12,
     "name": "Samsung Galaxy S23",
     "price": 599,
     "category": "samsung",
@@ -96,7 +85,6 @@
     "image": "https://i.ibb.co/YyyhrF3/samsung-s23.jpg"
   },
   {
-    "id": 13,
     "name": "Realme 9 Pro",
     "price": 249,
     "category": "realme",
@@ -104,7 +92,6 @@
     "image": "https://i.ibb.co/7S2XDJ6/realme-9pro.jpg"
   },
   {
-    "id": 14,
     "name": "Realme c30",
     "price": 149,
     "category": "realme",
@@ -112,7 +99,6 @@
     "image": "https://i.ibb.co/xsPS78v/realme-c30.jpg"
   },
   {
-    "id": 15,
     "name": "Realme c33",
     "price": 129,
     "category": "realme",
@@ -120,7 +106,6 @@
     "image": "https://i.ibb.co/Tk3Prd3/realme-c33.jpg"
   },
   {
-    "id": 16,
     "name": "Realme c55",
     "price": 119,
     "category": "realme",
@@ -128,7 +113,6 @@
     "image": "https://i.ibb.co/yqpY3r1/realme-c55.jpg"
   },
   {
-    "id": 17,
     "name": "Realme narzo50",
     "price": 109,
     "category": "realme",
@@ -136,7 +120,6 @@
     "image": "https://i.ibb.co/ZfnXsYT/realme-narzo50.jpg"
   },
   {
-    "id": 18,
     "name": "Realme c53",
     "price": 102,
     "category": "realme",
@@ -145,7 +128,6 @@
   },
 
   {
-    "id": 19,
     "name": "oppo A17",
     "price": 799,
     "category": "oppo",
@@ -153,7 +135,6 @@
     "image": "https://i.ibb.co/p0g7NTH/oppo-a17.jpg"
   },
   {
-    "id": 20,
     "name": "oppo A31",
     "price": 699,
     "category": "oppo",
@@ -161,7 +142,6 @@
     "image": "https://i.ibb.co/5WrN4DZ/oppo-a31.jpg"
   },
   {
-    "id": 21,
     "name": "oppo A53",
     "price": 599,
     "category": "oppo",
@@ -169,7 +149,6 @@
     "image": "https://i.ibb.co/DVw3n9B/oppo-a53.jpg"
   },
   {
-    "id": 22,
     "name": "oppo A77",
     "price": 499,
     "category": "oppo",
@@ -177,7 +156,6 @@
     "image": "https://i.ibb.co/R7Jf5Yw/oppo-a77.jpg"
   },
   {
-    "id": 23,
     "name": "oppo A95",
     "price": 399,
     "category": "oppo",
@@ -185,7 +163,6 @@
     "image": "https://i.ibb.co/vLSHc7y/oppo-a95.jpg"
   },
   {
-    "id": 24,
     "name": "oppo F19",
     "price": 299,
     "category": "oppo",
@@ -193,7 +170,6 @@
     "image": "https://i.ibb.co/T4JPjZp/oppo-f19.jpg"
   },
   {
-    "id": 25,
     "name": "Vivo V27",
     "price": 329,
     "category": "vivo",
@@ -201,7 +177,6 @@
     "image": "https://i.ibb.co/ySXNrww/vivo-v27.jpg"
   },
   {
-    "id": 26,
     "name": "Vivo Y16",
     "price": 229,
     "category": "vivo",
@@ -209,7 +184,6 @@
     "image": "https://i.ibb.co/nCstKYF/vivo-y16.jpg"
   },
   {
-    "id": 27,
     "name": "Vivo Y22",
     "price": 223,
     "category": "vivo",
@@ -217,7 +191,6 @@
     "image": "https://i.ibb.co/KyKswnZ/vivo-y22.jpg"
   },
   {
-    "id": 28,
     "name": "Vivo Y27",
     "price": 213,
     "category": "vivo",
@@ -225,7 +198,6 @@
     "image": "https://i.ibb.co/MsTQCpp/vivo-y27.jpg"
   },
   {
-    "id": 29,
     "name": "Vivo Y36",
     "price": 153,
     "category": "vivo",
@@ -233,7 +205,6 @@
     "image": "https://i.ibb.co/SQdmh3P/vivo-y36.jpg"
   },
   {
-    "id": 30,
     "name": "Vivo X80",
     "price": 135,
     "category": "vivo",

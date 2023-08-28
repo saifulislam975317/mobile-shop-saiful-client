@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../../ContextProvider/AuthProvider";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -14,12 +15,17 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/order">Order</NavLink>
+        <NavLink to="/order">Shop</NavLink>
       </li>
       <li>
         <NavLink to="/offered">Offered</NavLink>
       </li>
-
+      <li>
+        <NavLink to="/myCart">
+          <AiOutlineShoppingCart className="text-xl"></AiOutlineShoppingCart>
+          <span className="badge badge-warning">+0</span>
+        </NavLink>
+      </li>
       {user ? (
         <>
           <li onClick={handleLogout}>

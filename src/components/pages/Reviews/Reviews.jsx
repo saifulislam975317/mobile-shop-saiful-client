@@ -12,7 +12,7 @@ import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 const Reviews = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch("ratings.json")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);

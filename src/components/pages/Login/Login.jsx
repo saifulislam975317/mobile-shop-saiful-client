@@ -1,12 +1,17 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../../assets/loginAndSignup/login.jpg";
 import { AuthContext } from "../../../ContextProvider/AuthProvider";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { logIn, forgotPassword } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const {
     register,
     handleSubmit,
@@ -22,6 +27,14 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "user login successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setLogInError(error.message);
@@ -104,7 +117,7 @@ const Login = () => {
             </button>
             <p>
               Don't have an account?
-              <Link className="btn-link text-secondary" to="/signUp">
+              <Link className="btn-link text-secondary ml-2" to="/signUp">
                 Create a new account
               </Link>
             </p>
