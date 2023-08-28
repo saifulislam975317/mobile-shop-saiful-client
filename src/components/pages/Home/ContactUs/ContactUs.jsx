@@ -21,7 +21,7 @@ const ContactUs = () => {
             type="text"
             name="name"
             placeholder="Enter your Name"
-            className="input input-bordered w-full max-w-xs required"
+            className="input input-bordered w-full max-w-xs "
             required
           />
         </div>
@@ -33,7 +33,7 @@ const ContactUs = () => {
             type="email"
             name="email"
             placeholder="Enter your email"
-            className="input input-bordered w-full max-w-xs required"
+            className="input input-bordered w-full max-w-xs "
             required
           />
         </div>
