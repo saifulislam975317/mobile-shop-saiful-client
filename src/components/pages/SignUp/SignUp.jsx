@@ -3,9 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import signUpImg from "../../../assets/loginAndSignup/signUp.jpg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../ContextProvider/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 const SignUp = () => {
   const [errorEmail, setErrorEmail] = useState("");
-  const { signUp } = useContext(AuthContext);
+  const { signUp, userUpdateProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const {
     register,
@@ -13,10 +14,12 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const handleSignUp = (data) => {
     signUp(data.email, data.password)
       .then((result) => {
         const user = result.user;
+        userUpdateProfile(data.name);
         reset();
         navigate("/");
         console.log(user);
@@ -80,8 +83,8 @@ const SignUp = () => {
                   {...register("password", {
                     required: "Password is required",
                     minLength: {
-                      value: 8,
-                      message: "password should be at least 8 characters",
+                      value: 6,
+                      message: "password should be at least 6 characters",
                     },
                     pattern: {
                       value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
@@ -113,9 +116,7 @@ const SignUp = () => {
               </Link>
             </p>
             <div className="divider">OR</div>
-            <button className="btn btn-accent w-full">
-              Continue with Google
-            </button>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

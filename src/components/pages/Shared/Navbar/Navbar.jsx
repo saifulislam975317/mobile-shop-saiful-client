@@ -25,6 +25,9 @@ const Navbar = () => {
           <li onClick={handleLogout}>
             <NavLink to="/login">LogOut</NavLink>
           </li>
+          <li>
+            <a href="">{user?.displayName}</a>
+          </li>
         </>
       ) : (
         <>
