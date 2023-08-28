@@ -28,6 +28,9 @@ const Navbar = () => {
           <span className="badge badge-warning">+{carts?.length || 0}</span>
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/dashboard">Dashboard</NavLink>
+      </li>
       {user ? (
         <>
           <li onClick={handleLogout}>

@@ -116,7 +116,7 @@ const Login = () => {
               Forgot password?
             </button>
             <p>
-              Don't have an account?
+              Don not have an account?
               <Link className="btn-link text-secondary ml-2" to="/signUp">
                 Create a new account
               </Link>
