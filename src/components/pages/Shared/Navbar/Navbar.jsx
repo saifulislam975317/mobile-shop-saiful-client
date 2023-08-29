@@ -23,7 +23,7 @@ const Navbar = () => {
         <NavLink to="/offered">Offered</NavLink>
       </li>
       <li>
-        <NavLink to="/myCart">
+        <NavLink to="dashboard/myCart">
           <AiOutlineShoppingCart className="text-xl"></AiOutlineShoppingCart>
           <span className="badge badge-warning">+{carts?.length || 0}</span>
         </NavLink>

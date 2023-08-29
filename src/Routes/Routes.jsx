@@ -7,6 +7,7 @@ import SignUp from "../components/pages/SignUp/SignUp";
 import Login from "../components/pages/Login/Login";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import MyCart from "../components/pages/Dashboard/Cart/MyCart";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 export const router = createBrowserRouter([
   {
@@ -44,5 +45,9 @@ export const router = createBrowserRouter([
         element: <MyCart></MyCart>,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <PageNotFound></PageNotFound>,
   },
 ]);

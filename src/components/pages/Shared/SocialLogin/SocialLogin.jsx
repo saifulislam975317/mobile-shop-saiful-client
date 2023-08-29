@@ -13,9 +13,25 @@ const SocialLogin = () => {
   const handleGoogleLogin = () => {
     googleLogIn()
       .then((result) => {
-        const user = result.user;
-        console.log(user);
-        navigate(from, { replace: true });
+        const loggedUser = result.user;
+        const saveUser = {
+          name: loggedUser.displayName,
+          email: loggedUser.email,
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId || !data.insertedId) {
+              navigate(from, { replace: true });
+            }
+          });
+        console.log(loggedUser);
       })
       .catch((error) => {
         console.log(error.message);

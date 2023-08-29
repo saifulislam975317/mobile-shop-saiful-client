@@ -3,6 +3,7 @@ import { AuthContext } from "../../../../ContextProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCarts from "../../../../hooks/useCarts";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const MobileCard = ({ item }) => {
   const { name, price, image, description } = item;
@@ -79,7 +80,7 @@ const MobileCard = ({ item }) => {
             onClick={() => handleAddToCart(item)}
             className="btn btn-info"
           >
-            Order Now
+            Add to cart<AiOutlineShoppingCart></AiOutlineShoppingCart>
           </button>
         </div>
       </div>

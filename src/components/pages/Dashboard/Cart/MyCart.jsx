@@ -1,9 +1,39 @@
 import { Helmet } from "react-helmet-async";
 import { BsFillTrashFill } from "react-icons/bs";
 import useCarts from "../../../../hooks/useCarts";
+import Swal from "sweetalert2";
 const MyCart = () => {
-  const [carts] = useCarts();
+  const [carts, refetch] = useCarts();
   const total = carts.reduce((sum, item) => item.price + sum, 0);
+
+  const handleDelete = (item) => {
+    Swal.fire({
+      title: "Are you sure? ",
+      text: `want to delete the ${item.name} item?`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/carts/${item._id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                `${item.name} has been deleted.`,
+                "success"
+              );
+              refetch();
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div className="w-full px-12">
@@ -21,10 +51,10 @@ const MyCart = () => {
           <thead>
             <tr>
               <th>Sl No.</th>
-              <th>Food image</th>
-              <th>Food Name</th>
+              <th>Mobile images</th>
+              <th>Mobile Name</th>
               <th>Price</th>
-              <th>Action</th>
+              <th>Delete</th>
             </tr>
           </thead>
 

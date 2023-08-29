@@ -6,7 +6,6 @@ import {
   AiFillCreditCard,
   AiFillFileAdd,
   AiTwotoneHome,
-  AiOutlineMenu,
   AiTwotoneShopping,
   AiFillContacts,
   AiFillBook,
@@ -109,13 +108,9 @@ const Dashboard = () => {
               <AiTwotoneHome></AiTwotoneHome>Home
             </NavLink>
           </li>
+
           <li>
-            <NavLink to="/menu">
-              <AiOutlineMenu></AiOutlineMenu>Menu
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/order/salad">
+            <NavLink to="/order">
               <AiTwotoneShopping></AiTwotoneShopping>Shop
             </NavLink>
           </li>
