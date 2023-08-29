@@ -11,6 +11,7 @@ import PageNotFound from "../PageNotFound/PageNotFound";
 import AllUsers from "../components/pages/Dashboard/AllUsers/AllUsers";
 import PrivateRoute from "./PrivateRoute";
 import AddItem from "../components/pages/Dashboard/AddItem/AddItem";
+import ManageItems from "../components/pages/Dashboard/ManageItems/ManageItems";
 
 export const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
       {
         path: "addItem",
         element: <AddItem></AddItem>,
+      },
+      {
+        path: "manageItems",
+        element: <ManageItems></ManageItems>,
       },
     ],
   },
