@@ -10,6 +10,7 @@ import MyCart from "../components/pages/Dashboard/Cart/MyCart";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import AllUsers from "../components/pages/Dashboard/AllUsers/AllUsers";
 import PrivateRoute from "./PrivateRoute";
+import AddItem from "../components/pages/Dashboard/AddItem/AddItem";
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
       {
         path: "allUsers",
         element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "addItem",
+        element: <AddItem></AddItem>,
       },
     ],
   },
