@@ -68,9 +68,7 @@ const AuthProvider = ({ children }) => {
       setLoading(false);
     });
 
-    return () => {
-      return unsubscribe;
-    };
+    return () => unsubscribe;
   }, []);
 
   return (

@@ -80,7 +80,8 @@ const MobileCard = ({ item }) => {
             onClick={() => handleAddToCart(item)}
             className="btn btn-info"
           >
-            Add to cart<AiOutlineShoppingCart></AiOutlineShoppingCart>
+            Add to cart
+            <AiOutlineShoppingCart className="text-xl"></AiOutlineShoppingCart>
           </button>
         </div>
       </div>

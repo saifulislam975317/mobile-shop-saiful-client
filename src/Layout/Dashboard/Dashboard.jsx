@@ -16,7 +16,7 @@ import { FaUsers } from "react-icons/fa";
 import useCarts from "../../hooks/useCarts";
 
 const Dashboard = () => {
-  const isAdmin = false;
+  const isAdmin = true;
   const [carts] = useCarts();
   return (
     <div className="drawer lg:drawer-open">
