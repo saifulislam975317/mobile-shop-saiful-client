@@ -11,12 +11,13 @@ import {
   AiFillBook,
   AiOutlineMenuFold,
 } from "react-icons/ai";
-import { ImSpoonKnife } from "react-icons/im";
-import { FaUsers } from "react-icons/fa";
+import { FaUsers, FaUserPlus } from "react-icons/fa";
 import useCarts from "../../hooks/useCarts";
+import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
-  const isAdmin = true;
+  // const isAdmin = true;
+  const [isAdmin] = useAdmin();
   const [carts] = useCarts();
   return (
     <div className="drawer lg:drawer-open">
@@ -43,7 +44,7 @@ const Dashboard = () => {
 
               <li>
                 <NavLink to="/dashboard/addItem">
-                  <ImSpoonKnife></ImSpoonKnife>Add Items
+                  <FaUserPlus></FaUserPlus>Add Items
                 </NavLink>
               </li>
 

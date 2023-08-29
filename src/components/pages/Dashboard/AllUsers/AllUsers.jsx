@@ -7,7 +7,11 @@ const AllUsers = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users");
+      const res = await fetch("http://localhost:5000/users", {
+        headers: {
+          authorization: `bearer ${localStorage.getItem("access-token")}`,
+        },
+      });
       const data = await res.json();
       return data;
     },
@@ -40,6 +44,26 @@ const AllUsers = () => {
       }
     });
   };
+
+  const handleMakeAdmin = (user) => {
+    fetch(`http://localhost:5000/users/admin/${user._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          refetch();
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: `${user.name} is an Admin now!`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+    console.log(user);
+  };
   return (
     <div className="w-full px-12">
       <Helmet>
@@ -69,7 +93,16 @@ const AllUsers = () => {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
-                  <FaUsers className="text-lg"></FaUsers>
+                  {user?.role === "admin" ? (
+                    "Admin"
+                  ) : (
+                    <button
+                      onClick={() => handleMakeAdmin(user)}
+                      className="btn btn-ghost  bg-green-600 text-white"
+                    >
+                      Make Admin <FaUsers></FaUsers>
+                    </button>
+                  )}
                 </td>
                 <th>
                   <button
