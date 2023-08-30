@@ -44,7 +44,7 @@ const MyCart = () => {
 
       <div className="flex justify-evenly items-center uppercase h-[60px] font-semibold ">
         <h1>Total orders: {carts.length}</h1>
-        <p>price: ${Math.round(total)}</p>
+        <p>Total price: ${Math.round(total)}</p>
         {carts.length > 0 ? (
           <Link to="/dashboard/payment">
             <button className="btn btn-warning btn-sm">pay</button>

@@ -5,7 +5,7 @@ import { useQuery } from "react-query";
 const useAdmin = () => {
   const { user } = useContext(AuthContext);
   const { data: isAdmin = [], isAdminLoading } = useQuery({
-    queryKey: ["admin", user.email],
+    queryKey: ["admin", user?.email],
     queryFn: async () => {
       const res = await fetch(
         `http://localhost:5000/users/admin/${user?.email}`,

@@ -3,10 +3,12 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../../ContextProvider/AuthProvider";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import useCarts from "../../../../hooks/useCarts";
+import useAdmin from "../../../../hooks/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [carts] = useCarts();
+  const [isAdmin] = useAdmin();
   const handleLogout = () => {
     logOut().then(() => {});
   };
@@ -28,9 +30,15 @@ const Navbar = () => {
           <span className="badge badge-warning">+{carts?.length || 0}</span>
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/dashboard">Dashboard</NavLink>
-      </li>
+      {isAdmin ? (
+        <li>
+          <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
+        </li>
+      ) : (
+        <li>
+          <NavLink to="/dashboard/userHome">Dashboard</NavLink>
+        </li>
+      )}
       {user ? (
         <>
           <li onClick={handleLogout}>
