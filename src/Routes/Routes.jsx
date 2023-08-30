@@ -12,6 +12,7 @@ import AllUsers from "../components/pages/Dashboard/AllUsers/AllUsers";
 import PrivateRoute from "./PrivateRoute";
 import AddItem from "../components/pages/Dashboard/AddItem/AddItem";
 import ManageItems from "../components/pages/Dashboard/ManageItems/ManageItems";
+import UpdateItem from "../components/pages/Dashboard/UpdateItem/UpdateItem";
 
 export const router = createBrowserRouter([
   {
@@ -63,6 +64,12 @@ export const router = createBrowserRouter([
       {
         path: "manageItems",
         element: <ManageItems></ManageItems>,
+      },
+      {
+        path: "manageItems/:id",
+        element: <UpdateItem></UpdateItem>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/mobile-data/${params.id}`),
       },
     ],
   },
