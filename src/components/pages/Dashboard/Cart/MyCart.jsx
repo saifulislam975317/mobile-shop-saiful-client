@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { BsFillTrashFill } from "react-icons/bs";
 import useCarts from "../../../../hooks/useCarts";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 const MyCart = () => {
   const [carts, refetch] = useCarts();
   const total = carts.reduce((sum, item) => item.price + sum, 0);
@@ -44,7 +45,9 @@ const MyCart = () => {
       <div className="flex justify-evenly items-center uppercase h-[60px] font-semibold ">
         <h1>Total orders: {carts.length}</h1>
         <p>price: ${Math.round(total)}</p>
-        <button className="btn btn-warning btn-sm">pay</button>
+        <Link to="/dashboard/payment">
+          <button className="btn btn-warning btn-sm">pay</button>
+        </Link>
       </div>
       <div className="overflow-x-auto ">
         <table className="table">

@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddItem from "../components/pages/Dashboard/AddItem/AddItem";
 import ManageItems from "../components/pages/Dashboard/ManageItems/ManageItems";
 import UpdateItem from "../components/pages/Dashboard/UpdateItem/UpdateItem";
+import Payment from "../components/pages/Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: "manageItems",
         element: <ManageItems></ManageItems>,
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
       },
       {
         path: "manageItems/:id",

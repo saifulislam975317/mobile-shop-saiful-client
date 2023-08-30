@@ -12,28 +12,28 @@ import {
   AiOutlineMenuFold,
 } from "react-icons/ai";
 import { FaUsers, FaUserPlus } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
 import useCarts from "../../hooks/useCarts";
 import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
-  // const isAdmin = true;
   const [isAdmin] = useAdmin();
   const [carts] = useCarts();
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
-        <Outlet></Outlet>
+      <div className="drawer-content ">
         <label
           htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
+          className="btn btn-neutral p-4 drawer-button lg:hidden"
         >
-          Open drawer
+          <FiMenu></FiMenu>
         </label>
+        <Outlet></Outlet>
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+        <ul className="menu p-4 w-80 min-h-full  bg-slate-600 text-white">
           {isAdmin ? (
             <>
               <li>
@@ -74,13 +74,8 @@ const Dashboard = () => {
               </li>
 
               <li>
-                <NavLink to="/dashboard/reservation">
-                  <AiFillCalendar></AiFillCalendar>Reservation
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/dashboard/payment">
-                  <AiFillCreditCard></AiFillCreditCard>Payment history
+                  <AiFillCreditCard></AiFillCreditCard>Payment
                 </NavLink>
               </li>
               <li>
