@@ -1,4 +1,4 @@
-import aboutBg from "../../../../assets/aboutUs/about us.avif";
+import aboutBg from "../../../../assets/aboutUs/about us.jpg";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 const AboutUs = () => {
   return (

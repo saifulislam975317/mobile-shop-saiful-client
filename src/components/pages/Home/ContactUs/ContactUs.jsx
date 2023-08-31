@@ -1,31 +1,85 @@
+import { useRef } from "react";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
-
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
+import { BsFillTelephoneOutboundFill } from "react-icons/bs";
+import { GoLocation } from "react-icons/go";
+import { AiOutlineMail } from "react-icons/ai";
 const ContactUs = () => {
-  const handleSubmit = (e) => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    const form = event.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const textArea = form.textArea.value;
-    console.log(name, email, textArea);
+
+    emailjs
+      .sendForm(
+        "saifulEmailService@17",
+        "template_s2ftyt8",
+        form.current,
+        "oUxxPtTgGe6BKOr8J"
+      )
+      .then(
+        (result) => {
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Your message have been sent",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          console.log(result);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
   };
+
   return (
-    <div>
-      <SectionTitle heading={"Get In Touch"}></SectionTitle>
-      <form className="flex flex-col items-center">
-        <div className="form-control w-full max-w-xs">
+    <div className="mt-12">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-2 w-3/4 mx-auto">
+        <div className="card w-64 bg-teal-700 text-white">
+          <div className="card-body items-center text-center">
+            <BsFillTelephoneOutboundFill className="text-4xl"></BsFillTelephoneOutboundFill>
+            <h2 className="card-title">Phone</h2>
+            <p>+8801781-281193</p>
+          </div>
+        </div>
+        <div className="card w-64 bg-slate-400 text-white">
+          <div className="card-body items-center text-center">
+            <GoLocation className="text-4xl "></GoLocation>
+            <h2 className="card-title">Address</h2>
+            <p>Kallyanpur,Dhaka-1216</p>
+          </div>
+        </div>
+        <div className="card w-64 bg-sky-600 text-white">
+          <div className="card-body items-center text-center">
+            <AiOutlineMail className="text-4xl"></AiOutlineMail>
+            <h2 className="card-title">Email</h2>
+            <p>saifulislam975317@gmail.com</p>
+          </div>
+        </div>
+      </div>
+      <SectionTitle heading={"Contact Us"}></SectionTitle>
+      <form
+        className="flex flex-col mx-auto w-1/2"
+        ref={form}
+        onSubmit={sendEmail}
+      >
+        <div className="form-control">
           <label className="label">
             <span className="label-text">Your Name</span>
           </label>
           <input
             type="text"
             name="name"
-            placeholder="Enter your Name"
-            className="input input-bordered w-full max-w-xs "
+            placeholder="Enter your name"
+            className="input input-bordered"
             required
           />
         </div>
-        <div className="form-control w-full max-w-xs">
+        <div className="form-control">
           <label className="label">
             <span className="label-text">Your Email</span>
           </label>
@@ -33,27 +87,22 @@ const ContactUs = () => {
             type="email"
             name="email"
             placeholder="Enter your email"
-            className="input input-bordered w-full max-w-xs "
+            className="input input-bordered"
             required
           />
         </div>
-        <div className="form-control w-full max-w-xs">
+        <div className="form-control">
           <label className="label">
             <span className="label-text">Your Message</span>
           </label>
           <textarea
-            name="textArea"
-            className="textarea textarea-bordered h-24 resize-none"
-            placeholder="write here---"
+            className="textarea textarea-bordered resize-none"
+            name="message"
+            placeholder="write your message here..."
           ></textarea>
         </div>
 
-        <input
-          onClick={handleSubmit}
-          className="btn btn-info mt-2"
-          type="submit"
-          value="submit"
-        />
+        <input className="btn btn-info my-4" type="submit" value="send" />
       </form>
     </div>
   );

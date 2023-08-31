@@ -17,6 +17,7 @@ import Payment from "../components/pages/Dashboard/Payment/Payment";
 import AdminHome from "../components/pages/Dashboard/AdminHome/AdminHome";
 import UserHome from "../components/pages/Dashboard/UserHome/UserHome";
 import PaymentHistory from "../components/pages/Dashboard/PaymentHistory/PaymentHistory";
+import AboutUs from "../components/pages/Home/AboutUs/AboutUs";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
       {
         path: "/signUp",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "/logIn",

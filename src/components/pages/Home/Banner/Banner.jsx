@@ -1,8 +1,8 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import banner1 from "../../../../assets/banner/banner-1.avif";
-import banner2 from "../../../../assets/banner/banner-2.avif";
-import banner4 from "../../../../assets/banner/banner-4.avif";
-import banner5 from "../../../../assets/banner/banner-5.avif";
+import banner1 from "../../../../assets/banner/banner-1.jpg";
+import banner2 from "../../../../assets/banner/banner-2.jpg";
+import banner3 from "../../../../assets/banner/banner-3.jpg";
+import banner4 from "../../../../assets/banner/banner-4.jpg";
 import "./BannerCss/BannerStyle.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -28,17 +28,17 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={banner2} alt="" />
+          <img src={banner1} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={banner1} alt="" />
+          <img src={banner2} alt="" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src={banner4} alt="" />
+          <img src={banner3} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={banner5} alt="" />
+          <img src={banner4} alt="" />
         </SwiperSlide>
       </Swiper>
     </div>

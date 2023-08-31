@@ -21,8 +21,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/order">Shop</NavLink>
       </li>
+
       <li>
-        <NavLink to="/offered">Offered</NavLink>
+        <NavLink to="/about">About us</NavLink>
       </li>
       <li>
         <NavLink to="dashboard/myCart">
@@ -30,17 +31,16 @@ const Navbar = () => {
           <span className="badge badge-warning">+{carts?.length || 0}</span>
         </NavLink>
       </li>
-      {isAdmin ? (
-        <li>
-          <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
-        </li>
-      ) : (
-        <li>
-          <NavLink to="/dashboard/userHome">Dashboard</NavLink>
-        </li>
-      )}
+
       {user ? (
         <>
+          <li>
+            <NavLink
+              to={isAdmin ? "/dashboard/adminHome" : "/dashboard/userHome"}
+            >
+              Dashboard
+            </NavLink>
+          </li>
           <li onClick={handleLogout}>
             <NavLink to="/login">LogOut</NavLink>
           </li>

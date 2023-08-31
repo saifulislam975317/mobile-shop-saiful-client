@@ -14,7 +14,7 @@ const Order = () => {
   const oppo = products.filter((product) => product.category === "oppo");
   const samsung = products.filter((product) => product.category === "samsung");
   return (
-    <div>
+    <div className="mb-8">
       <SectionTitle
         heading={"Order  Mobile by Category"}
         subHeading={"-------Hurry up!--------"}

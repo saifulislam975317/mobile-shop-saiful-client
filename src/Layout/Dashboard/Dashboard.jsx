@@ -93,7 +93,7 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/contact">
+            <NavLink to="/contact">
               <AiFillContacts></AiFillContacts>Contact
             </NavLink>
           </li>

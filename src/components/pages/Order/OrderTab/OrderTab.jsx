@@ -2,7 +2,7 @@ import MobileCard from "../MobileCard/MobileCard";
 
 const OrderTab = ({ items }) => {
   return (
-    <div className="grid md:grid-cols-3 gap-10">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3  gap-8">
       {items.map((item) => (
         <MobileCard key={item.id} item={item}></MobileCard>
       ))}
