@@ -106,7 +106,7 @@ const CheckoutForm = ({ refetch, carts, price }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="w-2/4 p-8" onSubmit={handleSubmit}>
         <CardElement
           options={{
             style: {
@@ -124,7 +124,7 @@ const CheckoutForm = ({ refetch, carts, price }) => {
           }}
         />
         <button
-          className="btn btn-info mt-2 "
+          className="btn btn-info -mt-2 ml-2"
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >
@@ -133,9 +133,7 @@ const CheckoutForm = ({ refetch, carts, price }) => {
       </form>
       {cardError && <p className="text-red-600 ml-8 -mt-4">{cardError}</p>}
       {transactionId && (
-        <p className="text-green-600 ml-8 -mt-12">
-          Your TnxId: {transactionId}
-        </p>
+        <p className="text-green-600 ml-8 -mt-4">Your TnxId: {transactionId}</p>
       )}
     </>
   );

@@ -40,10 +40,7 @@ const ManageItems = () => {
   };
   return (
     <div className="w-full">
-      <SectionTitle
-        heading={"Manage All Items"}
-        subHeading={"Hurry Up?"}
-      ></SectionTitle>
+      <SectionTitle heading={"Manage All Items"}></SectionTitle>
       <h1 className="text-center font-bold text-lg">
         Total items: {products.length}
       </h1>
@@ -56,7 +53,7 @@ const ManageItems = () => {
               <th>Name</th>
               <th>Category</th>
               <th>Price</th>
-              <th>Update</th>
+              <th>Edit</th>
               <th>Delete</th>
             </tr>
           </thead>

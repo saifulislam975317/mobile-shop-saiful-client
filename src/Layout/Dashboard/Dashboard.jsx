@@ -2,13 +2,10 @@ import { NavLink, Outlet } from "react-router-dom";
 import {
   AiOutlineShoppingCart,
   AiFillHome,
-  AiFillCalendar,
   AiFillCreditCard,
-  AiFillFileAdd,
   AiTwotoneHome,
   AiTwotoneShopping,
   AiFillContacts,
-  AiFillBook,
   AiOutlineMenuFold,
 } from "react-icons/ai";
 import { FaUsers, FaUserPlus } from "react-icons/fa";
@@ -55,11 +52,6 @@ const Dashboard = () => {
               </li>
 
               <li>
-                <NavLink to="/dashboard/bookings">
-                  <AiFillBook></AiFillBook>Manage Bookings
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/dashboard/allUsers">
                   <FaUsers></FaUsers>All Users
                 </NavLink>
@@ -74,8 +66,8 @@ const Dashboard = () => {
               </li>
 
               <li>
-                <NavLink to="/dashboard/payment">
-                  <AiFillCreditCard></AiFillCreditCard>Payment
+                <NavLink to="/dashboard/paymentHistory">
+                  <AiFillCreditCard></AiFillCreditCard>Payment History
                 </NavLink>
               </li>
               <li>
@@ -84,16 +76,6 @@ const Dashboard = () => {
                   <span className="badge badge-secondary">
                     +{carts.length || 0}
                   </span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/review">
-                  <AiFillFileAdd></AiFillFileAdd>Add Review
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/booking">
-                  <AiFillCalendar></AiFillCalendar>My Booking
                 </NavLink>
               </li>
             </>

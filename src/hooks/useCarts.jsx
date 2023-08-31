@@ -4,13 +4,13 @@ import { useQuery } from "react-query";
 
 const useCarts = () => {
   const { user } = useContext(AuthContext);
-  const token = localStorage.getItem("access-token");
   const { data: carts = [], refetch } = useQuery({
     queryKey: ["carts", user?.email],
+
     queryFn: async () => {
       const res = await fetch(`http://localhost:5000/carts/${user?.email}`, {
         headers: {
-          authorization: `bearer ${token}`,
+          authorization: `bearer ${localStorage.getItem("access-token")}`,
         },
       });
       const data = await res.json();

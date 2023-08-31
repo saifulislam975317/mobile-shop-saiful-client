@@ -24,12 +24,12 @@ const MyCart = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
+              refetch();
               Swal.fire(
                 "Deleted!",
                 `${item.name} has been deleted.`,
                 "success"
               );
-              refetch();
             }
           });
       }

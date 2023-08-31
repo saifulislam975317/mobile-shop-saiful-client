@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const imgbb_api = import.meta.env.VITE_imageBB_api;
 const UpdateItem = () => {
   const mobileData = useLoaderData();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -53,6 +54,7 @@ const UpdateItem = () => {
                   showConfirmButton: false,
                   timer: 1500,
                 });
+                navigate("/dashboard/manageItems");
               }
             });
         }

@@ -24,7 +24,7 @@ const MobileCard = ({ item }) => {
       email: user?.email,
     };
 
-    if (user && user.email) {
+    if (user && user?.email) {
       fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {
