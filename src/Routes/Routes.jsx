@@ -99,7 +99,9 @@ export const router = createBrowserRouter([
         path: "manageItems/:id",
         element: <UpdateItem></UpdateItem>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/mobile-data/${params.id}`),
+          fetch(
+            `https://mobile-shop-saiful-server.vercel.app/mobile-data/${params.id}`
+          ),
       },
     ],
   },

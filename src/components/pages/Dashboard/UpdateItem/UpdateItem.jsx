@@ -36,13 +36,16 @@ const UpdateItem = () => {
             image: imgUrl,
           };
 
-          fetch(`http://localhost:5000/mobile-data/${mobileData._id}`, {
-            method: "PUT",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(newItem),
-          })
+          fetch(
+            `https://mobile-shop-saiful-server.vercel.app/mobile-data/${mobileData._id}`,
+            {
+              method: "PUT",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(newItem),
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               if (data.modifiedCount > 0) {

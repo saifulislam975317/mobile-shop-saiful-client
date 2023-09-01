@@ -8,7 +8,7 @@ const useHistory = () => {
     queryKey: ["payment-history"],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/payment-history/${user?.email}`
+        `https://mobile-shop-saiful-server.vercel.app/payment-history/${user?.email}`
       );
       const data = await res.json();
       return data;

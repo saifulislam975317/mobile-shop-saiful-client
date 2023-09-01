@@ -32,7 +32,7 @@ const AddItem = () => {
             description,
             image: imageURL,
           };
-          fetch("http://localhost:5000/mobile-data", {
+          fetch("https://mobile-shop-saiful-server.vercel.app/mobile-data", {
             method: "POST",
             headers: {
               "content-type": "application/json",

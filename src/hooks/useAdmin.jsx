@@ -8,7 +8,7 @@ const useAdmin = () => {
     queryKey: ["admin", user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/users/admin/${user?.email}`,
+        `https://mobile-shop-saiful-server.vercel.app/users/admin/${user?.email}`,
         {
           headers: {
             authorization: `bearer ${localStorage.getItem("access-token")}`,

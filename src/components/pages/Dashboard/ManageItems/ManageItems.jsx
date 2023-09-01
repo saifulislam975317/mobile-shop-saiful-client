@@ -18,9 +18,12 @@ const ManageItems = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/mobile-data/${product._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://mobile-shop-saiful-server.vercel.app/mobile-data/${product._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

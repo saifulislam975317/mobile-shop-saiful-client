@@ -8,11 +8,14 @@ const useCarts = () => {
     queryKey: ["carts", user?.email],
 
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/carts/${user?.email}`, {
-        headers: {
-          authorization: `bearer ${localStorage.getItem("access-token")}`,
-        },
-      });
+      const res = await fetch(
+        `https://mobile-shop-saiful-server.vercel.app/carts/${user?.email}`,
+        {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("access-token")}`,
+          },
+        }
+      );
       const data = await res.json();
       return data;
     },

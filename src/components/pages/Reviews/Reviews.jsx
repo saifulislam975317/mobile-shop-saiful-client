@@ -12,7 +12,7 @@ import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 const Reviews = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://mobile-shop-saiful-server.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);

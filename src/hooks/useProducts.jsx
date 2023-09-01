@@ -4,7 +4,9 @@ const useProducts = () => {
   const { data: products = [], refetch } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/mobile-data");
+      const res = await fetch(
+        "https://mobile-shop-saiful-server.vercel.app/mobile-data"
+      );
       const data = await res.json();
       return data;
     },

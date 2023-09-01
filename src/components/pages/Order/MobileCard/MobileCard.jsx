@@ -25,7 +25,7 @@ const MobileCard = ({ item }) => {
     };
 
     if (user && user?.email) {
-      fetch("http://localhost:5000/carts", {
+      fetch("https://mobile-shop-saiful-server.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
