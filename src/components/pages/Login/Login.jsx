@@ -30,7 +30,7 @@ const Login = () => {
         Swal.fire({
           position: "top-center",
           icon: "success",
-          title: "user login successfully",
+          title: `${user?.displayName} login successfully`,
           showConfirmButton: false,
           timer: 1500,
         });

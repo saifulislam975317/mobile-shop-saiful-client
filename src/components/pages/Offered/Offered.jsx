@@ -8,12 +8,9 @@ const Offered = () => {
         subHeading={"-----Don't miss------"}
       ></SectionTitle>
 
-      <div className="hero  p-12">
+      <div className="hero  p-4">
         <div className="hero-content flex-col lg:flex-row">
-          <img
-            src={discountBanner}
-            className="max-w-lg rounded-lg shadow-2xl"
-          />
+          <img src={discountBanner} className=" rounded-lg shadow-2xl" />
           <div>
             <div className="ml-12">
               <h1 className="text-4xl text-orange-600 font-bold">
@@ -22,7 +19,7 @@ const Offered = () => {
               <h4 className="font-bold text-lg">
                 We discount on realme mobile up to 70% off!
               </h4>
-              <p className="py-6">
+              <p className="py-4">
                 Unbelievable Savings: Get ready to upgrade your mobile
                 experience with a jaw-dropping 70% discount on the latest
                 smartphones! Discover cutting-edge technology and sleek designs

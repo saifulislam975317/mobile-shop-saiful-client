@@ -18,6 +18,7 @@ import AdminHome from "../components/pages/Dashboard/AdminHome/AdminHome";
 import UserHome from "../components/pages/Dashboard/UserHome/UserHome";
 import PaymentHistory from "../components/pages/Dashboard/PaymentHistory/PaymentHistory";
 import AboutUs from "../components/pages/Home/AboutUs/AboutUs";
+import ContactUs from "../components/pages/Home/ContactUs/ContactUs";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
       {
         path: "/logIn",
         element: <Login></Login>,
+      },
+      {
+        path: "/contact",
+        element: <ContactUs></ContactUs>,
       },
     ],
   },

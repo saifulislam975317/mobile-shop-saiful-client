@@ -3,12 +3,13 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { useContext } from "react";
 import { AuthContext } from "../../../../ContextProvider/AuthProvider";
 import useStats from "../../../../hooks/useStats";
+import adminHomeBg from "../../../../assets/home/adminHome.jpg";
 const AdminHome = () => {
   const { user } = useContext(AuthContext);
   const [stats] = useStats();
 
   return (
-    <div>
+    <div className="">
       <h1 className="text-center text-3xl font-bold mt-4">
         Welcome Back, {user?.displayName}
       </h1>
@@ -37,7 +38,7 @@ const AdminHome = () => {
           </div>
         </div>
         <div className="card w-48 bg-accent text-white">
-          <div className="card-body flex flex-row items-center text-center">
+          <div className="card-body flex flex-row items-center  text-center">
             <div>
               <TbTruckDelivery className="text-3xl "></TbTruckDelivery>
             </div>
@@ -48,7 +49,7 @@ const AdminHome = () => {
           </div>
         </div>
         <div className="card w-48 bg-violet-400 text-white">
-          <div className="card-body flex flex-row items-center text-center">
+          <div className="card-body flex flex-row items-center  text-center">
             <div>
               <FaWallet className="text-3xl "></FaWallet>
             </div>
@@ -59,6 +60,7 @@ const AdminHome = () => {
           </div>
         </div>
       </div>
+      <img className="w-[980px] ml-4 h-[530px]" src={adminHomeBg} alt="" />
     </div>
   );
 };

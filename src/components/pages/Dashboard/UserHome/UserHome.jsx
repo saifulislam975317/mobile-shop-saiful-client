@@ -3,6 +3,7 @@ import useStats from "../../../../hooks/useStats";
 import { useContext } from "react";
 import { AuthContext } from "../../../../ContextProvider/AuthProvider";
 import useHistory from "../../../../hooks/useHistory";
+import mobileShopImg from "../../../../assets/home/userHome .jpg";
 const UserHome = () => {
   const [stats] = useStats();
   const [items] = useHistory();
@@ -37,6 +38,7 @@ const UserHome = () => {
           </div>
         </div>
       </div>
+      <img className="w-[915px] ml-4 h-[530px]" src={mobileShopImg} alt="" />
     </div>
   );
 };
