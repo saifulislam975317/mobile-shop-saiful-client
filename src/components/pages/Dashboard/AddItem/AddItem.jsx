@@ -116,7 +116,7 @@ const AddItem = () => {
           <textarea
             className="textarea textarea-bordered resize-none h-24"
             {...register("description")}
-            placeholder="type food details here..."
+            placeholder="type mobile details here..."
           ></textarea>
         </div>
         <div className="form-control w-full max-w-xs">
