@@ -3,9 +3,10 @@ import { AuthContext } from "../ContextProvider/AuthProvider";
 import { useQuery } from "react-query";
 
 const useAdmin = () => {
-  const { user } = useContext(AuthContext);
-  const { data: isAdmin = [], isAdminLoading } = useQuery({
-    queryKey: ["admin", user?.email],
+  const { user, loading } = useContext(AuthContext);
+  const { data: isAdmin, isLoading: isAdminLoading } = useQuery({
+    queryKey: ["isAdmin", user?.email],
+    enabled: !loading,
     queryFn: async () => {
       const res = await fetch(
         `https://mobile-shop-saiful-server.vercel.app/users/admin/${user?.email}`,

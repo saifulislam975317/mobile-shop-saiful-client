@@ -1,13 +1,11 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import signUpImg from "../../../assets/loginAndSignup/signUp.jpg";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../../ContextProvider/AuthProvider";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
-import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 const SignUp = () => {
-  const [errorEmail, setErrorEmail] = useState("");
   const { signUp, userUpdateProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const {
@@ -49,15 +47,11 @@ const SignUp = () => {
         console.log("user", user);
       })
       .catch((error) => {
-        setErrorEmail(error.message);
         console.log("error", error.message);
       });
   };
   return (
     <div className="hero my-4">
-      <Helmet>
-        <title>Mobile | signUp</title>
-      </Helmet>
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left mr-2 p-10">
           <img src={signUpImg} alt="" />
@@ -94,11 +88,6 @@ const SignUp = () => {
                 />
                 {errors.email && (
                   <span className="text-red-600">{errors.email.message}</span>
-                )}
-                {errorEmail && (
-                  <span className="text-red-600">
-                    This email already used. please try another email.
-                  </span>
                 )}
               </div>
               <div className="form-control">

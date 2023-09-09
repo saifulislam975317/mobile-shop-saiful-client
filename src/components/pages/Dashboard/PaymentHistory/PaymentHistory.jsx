@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../../ContextProvider/AuthProvider";
-import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import useHistory from "../../../../hooks/useHistory";
 
@@ -10,7 +9,6 @@ const PaymentHistory = () => {
 
   return (
     <div>
-      <Helmet title="Mobile shop | Payment History"> </Helmet>
       <SectionTitle
         heading={"Payment History"}
         subHeading={"---See your payment history---"}

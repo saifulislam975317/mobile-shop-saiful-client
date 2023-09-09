@@ -1,7 +1,11 @@
 import { useQuery } from "react-query";
 
 const useProducts = () => {
-  const { data: products = [], refetch } = useQuery({
+  const {
+    data: products = [],
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
       const res = await fetch(
@@ -11,7 +15,7 @@ const useProducts = () => {
       return data;
     },
   });
-  return [products, refetch];
+  return [products, refetch, isLoading];
 };
 
 export default useProducts;

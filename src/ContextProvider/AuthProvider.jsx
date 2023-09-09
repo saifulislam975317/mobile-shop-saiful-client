@@ -43,7 +43,6 @@ const AuthProvider = ({ children }) => {
   };
 
   const forgotPassword = (email) => {
-    setLoading(true);
     return sendPasswordResetEmail(auth, email);
   };
 

@@ -6,7 +6,12 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ManageItems = () => {
-  const [products, refetch] = useProducts();
+  const [products, refetch, isLoading] = useProducts();
+  if (isLoading) {
+    return (
+      <span className="  justify-center mt-48 mx-auto block items-center loading loading-spinner text-warning loading-lg"></span>
+    );
+  }
   const handleDelete = (product) => {
     Swal.fire({
       title: "Are you sure? ",

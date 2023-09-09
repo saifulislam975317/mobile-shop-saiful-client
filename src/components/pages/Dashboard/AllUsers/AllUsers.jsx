@@ -1,10 +1,13 @@
-import { Helmet } from "react-helmet-async";
 import { BsFillTrashFill } from "react-icons/bs";
 import { FaUsers } from "react-icons/fa";
 import { useQuery } from "react-query";
 import Swal from "sweetalert2";
 const AllUsers = () => {
-  const { data: users = [], refetch } = useQuery({
+  const {
+    data: users = [],
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
       const res = await fetch(
@@ -19,6 +22,11 @@ const AllUsers = () => {
       return data;
     },
   });
+  if (isLoading) {
+    return (
+      <span className="  justify-center mt-48 mx-auto block items-center loading loading-spinner text-warning loading-lg"></span>
+    );
+  }
   const handleDelete = (user) => {
     Swal.fire({
       title: "Are you sure?",
@@ -75,10 +83,6 @@ const AllUsers = () => {
   };
   return (
     <div className="w-full px-12">
-      <Helmet>
-        <title>E-Res | Users</title>
-      </Helmet>
-
       <div className="flex justify-evenly items-center uppercase h-[60px] font-semibold ">
         <h1>Total users: {users.length}</h1>
       </div>

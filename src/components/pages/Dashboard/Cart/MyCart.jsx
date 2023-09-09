@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { BsFillTrashFill } from "react-icons/bs";
 import useCarts from "../../../../hooks/useCarts";
 import Swal from "sweetalert2";
@@ -41,10 +40,6 @@ const MyCart = () => {
 
   return (
     <div className="w-full px-12">
-      <Helmet>
-        <title>E-Res | Cart</title>
-      </Helmet>
-
       <div className="flex justify-evenly items-center uppercase h-[60px] font-semibold ">
         <h1>Total orders: {carts.length}</h1>
         <p>Total price: ${Math.round(total)}</p>

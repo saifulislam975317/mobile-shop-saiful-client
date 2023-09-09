@@ -19,7 +19,11 @@ const Order = () => {
         heading={"Order  Mobile by Category"}
         subHeading={"-------Hurry up!--------"}
       ></SectionTitle>
-      <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+      <Tabs
+        className="text-center"
+        selectedIndex={tabIndex}
+        onSelect={(index) => setTabIndex(index)}
+      >
         <TabList>
           <Tab>iPhone</Tab>
           <Tab>Samsung</Tab>

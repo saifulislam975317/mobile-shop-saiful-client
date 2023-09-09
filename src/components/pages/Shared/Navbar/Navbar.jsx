@@ -25,24 +25,27 @@ const Navbar = () => {
       <li>
         <NavLink to="/about">About us</NavLink>
       </li>
-      <li>
-        <NavLink to="dashboard/myCart">
-          <AiOutlineShoppingCart className="text-xl"></AiOutlineShoppingCart>
-          <span className="badge badge-warning">+{carts?.length || 0}</span>
-        </NavLink>
-      </li>
-
       {user ? (
         <>
           <li>
-            <NavLink
-              to={isAdmin ? "/dashboard/adminHome" : "/dashboard/userHome"}
-            >
-              Dashboard
+            <NavLink to="/dashboard/myCart">
+              <AiOutlineShoppingCart className="text-xl"></AiOutlineShoppingCart>
+              <span className="badge badge-warning">+{carts?.length || 0}</span>
             </NavLink>
           </li>
+
+          {isAdmin ? (
+            <li>
+              <NavLink to="/dashboard/adminHome"> Dashboard</NavLink>
+            </li>
+          ) : (
+            <li>
+              <NavLink to="/dashboard/userHome"> Dashboard</NavLink>
+            </li>
+          )}
+
           <li onClick={handleLogout}>
-            <NavLink to="/login">LogOut</NavLink>
+            <NavLink to="/login">Logout</NavLink>
           </li>
           <li>
             <a href="">{user?.displayName}</a>
@@ -51,10 +54,10 @@ const Navbar = () => {
       ) : (
         <>
           <li>
-            <NavLink to="/signUp">signUp</NavLink>
+            <NavLink to="/signUp">Sign Up</NavLink>
           </li>
           <li>
-            <NavLink to="/logIn">Login</NavLink>
+            <NavLink to="/login">Login</NavLink>
           </li>
         </>
       )}
