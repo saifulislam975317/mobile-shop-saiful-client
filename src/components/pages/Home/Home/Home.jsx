@@ -1,4 +1,5 @@
 import FrontCamera from "../../FrontCamera/FrontCamera";
+import MobileQualities from "../../MobileQualities/MobileQualities";
 import Offered from "../../Offered/Offered";
 import Order from "../../Order/Order";
 import Reviews from "../../Reviews/Reviews";
@@ -14,6 +15,7 @@ const Home = () => {
       <Offered></Offered>
       <Featured></Featured>
       <FrontCamera></FrontCamera>
+      <MobileQualities></MobileQualities>
       <Reviews></Reviews>
       <AboutUs></AboutUs>
       <ContactUs></ContactUs>
