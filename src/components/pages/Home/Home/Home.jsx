@@ -1,4 +1,5 @@
 import FrontCamera from "../../FrontCamera/FrontCamera";
+import MobileEssential from "../../MobileEssential/MobileEssential";
 import MobileQualities from "../../MobileQualities/MobileQualities";
 import Offered from "../../Offered/Offered";
 import Order from "../../Order/Order";
@@ -16,6 +17,7 @@ const Home = () => {
       <Featured></Featured>
       <FrontCamera></FrontCamera>
       <MobileQualities></MobileQualities>
+      <MobileEssential></MobileEssential>
       <Reviews></Reviews>
       <AboutUs></AboutUs>
       <ContactUs></ContactUs>

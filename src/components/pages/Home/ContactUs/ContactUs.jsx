@@ -2,9 +2,7 @@ import { useRef } from "react";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
-import { BsFillTelephoneOutboundFill } from "react-icons/bs";
-import { GoLocation } from "react-icons/go";
-import { AiOutlineMail } from "react-icons/ai";
+
 const ContactUs = () => {
   const form = useRef();
 
@@ -38,29 +36,6 @@ const ContactUs = () => {
 
   return (
     <div className="mt-12">
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-2 w-3/4 mx-auto">
-        <div className="card w-64 bg-teal-700 text-white">
-          <div className="card-body items-center text-center">
-            <BsFillTelephoneOutboundFill className="text-4xl"></BsFillTelephoneOutboundFill>
-            <h2 className="card-title">Phone</h2>
-            <p>+8801781-281193</p>
-          </div>
-        </div>
-        <div className="card w-64 bg-slate-400 text-white">
-          <div className="card-body items-center text-center">
-            <GoLocation className="text-4xl "></GoLocation>
-            <h2 className="card-title">Address</h2>
-            <p>Kallyanpur,Dhaka-1216</p>
-          </div>
-        </div>
-        <div className="card w-64 bg-sky-600 text-white">
-          <div className="card-body items-center text-center">
-            <AiOutlineMail className="text-4xl"></AiOutlineMail>
-            <h2 className="card-title">Email</h2>
-            <p>saifulislam975317@gmail.com</p>
-          </div>
-        </div>
-      </div>
       <SectionTitle heading={"Contact Us"}></SectionTitle>
       <form
         className="flex flex-col mx-auto w-1/2"
