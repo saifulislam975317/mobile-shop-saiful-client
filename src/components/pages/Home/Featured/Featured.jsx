@@ -16,9 +16,9 @@ const Featured = () => {
           <img src={featuredImg} alt="" />
         </div>
         <div className="ml-8 text-white ">
-          <div className="collapse collapse-arrow ">
+          <div className="collapse collapse-arrow  ">
             <input type="radio" name="my-accordion-2" checked="checked" />
-            <div className="collapse-title text-xl font-medium">
+            <div className="collapse-title  text-xl font-medium">
               About iphone 14pro max
             </div>
             <div className="collapse-content">

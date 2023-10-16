@@ -1,3 +1,4 @@
+import FrontCamera from "../../FrontCamera/FrontCamera";
 import Offered from "../../Offered/Offered";
 import Order from "../../Order/Order";
 import Reviews from "../../Reviews/Reviews";
@@ -12,6 +13,7 @@ const Home = () => {
       <Order></Order>
       <Offered></Offered>
       <Featured></Featured>
+      <FrontCamera></FrontCamera>
       <Reviews></Reviews>
       <AboutUs></AboutUs>
       <ContactUs></ContactUs>
